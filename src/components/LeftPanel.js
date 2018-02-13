@@ -7,6 +7,7 @@ import LeftPanelDiv from "../styled/LeftPanelDiv";
 import dictionary from '../dictionary';
 
 import cat from '../cat.png';
+import SettingsPanel from "./SettingsPanel";
 
 const Button = styled.button`
     
@@ -31,9 +32,10 @@ class LeftPanel extends React.Component{
                 alt="Catter"
                 onClick={this.handleMenuButtonClick}
             />
-            <span onClick={this.handleMenuButtonClick}>
+            {(globalState.isMenuOpen) ? <SettingsPanel/> : <span onClick={this.handleMenuButtonClick}>
                 {dictionary[globalState.currentLanguage].clickToExpand}
-            </span>
+            </span>}
+
 
 
         </LeftPanelDiv>

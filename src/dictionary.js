@@ -1,8 +1,10 @@
 export default {
     en: {
-        clickToExpand: 'Click to expand'
+        clickToExpand: 'Click to expand',
+        changeSettings: 'Adjust values'
     },
     ru: {
-        clickToExpand: 'Otkryt menyu'
+        clickToExpand: 'Otkryt menyu',
+        changeSettings: 'Pomenyat dannye'
     }
 };
