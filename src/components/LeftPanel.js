@@ -27,11 +27,11 @@ class LeftPanel extends React.Component{
     render(){
         return <LeftPanelDiv isOpen={globalState.isMenuOpen}>
 
-            <Avatar
+            {/*<Avatar
                 src={cat}
                 alt="Catter"
                 onClick={this.handleMenuButtonClick}
-            />
+            />*/}
             {(globalState.isMenuOpen) ? <SettingsPanel/> : <span onClick={this.handleMenuButtonClick}>
                 {dictionary[globalState.currentLanguage].clickToExpand}
             </span>}
