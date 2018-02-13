@@ -10,6 +10,18 @@ const Container = styled.div`
   flex-direction: column;
   align-content: center;
   align-items: center;
+  position: relative;
+`;
+
+const LanguageContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+`;
+
+const LanguageSpan = styled.span`
+    font-size: 1.5rem;
+    cursor: pointer;
 `;
 
 const ControlGroup = styled.div`
@@ -38,6 +50,14 @@ const Button = styled.button`
     padding: 0.5rem;
 `;
 
+const CloseButton = styled.span`
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+`;
+
 class SettingsPanel extends React.Component {
 
     handleChangeTargetCalories(amount){ globalState.calorieTarget+=amount; }
@@ -45,10 +65,26 @@ class SettingsPanel extends React.Component {
     handleChangeCaloriesPerPack(amount){ globalState.caloriesPerHalfPack+=amount }
     handleChangeCaloriesPerSpoon(amount){ globalState.caloriesPerSpoon+=amount }
 
+    handleLanguageRussian(){ globalState.currentLanguage = 'ru'; }
+    handleLanguageEnglish(){ globalState.currentLanguage = 'en'; }
+
+    handleCloseMenu(){ globalState.isMenuOpen = false; }
+
     render() {
         return (
             <Container>
+                <CloseButton onClick={this.handleCloseMenu}>x</CloseButton>
+
                 <h2>{dictionary.getWord('changeSettings')}</h2>
+
+                <LanguageContainer>
+                    <LanguageSpan onClick={this.handleLanguageEnglish}>
+                        English
+                    </LanguageSpan>
+                    <LanguageSpan onClick={this.handleLanguageRussian}>
+                        Russian
+                    </LanguageSpan>
+                </LanguageContainer>
 
                 <ControlGroup>
                     <TitleSpan>{dictionary.getWord('caloriesPerDayTarget')}</TitleSpan>

@@ -25,7 +25,8 @@ class LeftPanel extends React.Component{
     };
 
     render(){
-        return <LeftPanelDiv isOpen={globalState.isMenuOpen}>
+        if (globalState.isMenuOpen)
+        return <LeftPanelDiv isOpen={}>
 
             {/*<Avatar
                 src={cat}
