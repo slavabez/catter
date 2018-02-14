@@ -21,6 +21,10 @@ const LanguageContainer = styled.div`
 
 const LanguageSpan = styled.span`
     font-size: 1.5rem;
+    background-color: lightcoral;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: white;
     cursor: pointer;
 `;
 
@@ -45,9 +49,8 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 0.2rem;
-    padding: 0.5rem;
 `;
 
 const CloseButton = styled.span`
@@ -55,7 +58,13 @@ const CloseButton = styled.span`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.4rem;
+  background-color: lightcoral;
+  border-radius: 2rem;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: lightblue;
 `;
 
 class SettingsPanel extends React.Component {

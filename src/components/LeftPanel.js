@@ -25,21 +25,20 @@ class LeftPanel extends React.Component{
     };
 
     render(){
-        if (globalState.isMenuOpen)
-        return <LeftPanelDiv isOpen={}>
+        if (globalState.isMenuOpen) {
+            return <LeftPanelDiv isOpen={globalState.isMenuOpen}>
 
-            {/*<Avatar
-                src={cat}
-                alt="Catter"
-                onClick={this.handleMenuButtonClick}
-            />*/}
-            {(globalState.isMenuOpen) ? <SettingsPanel/> : <span onClick={this.handleMenuButtonClick}>
+                {(globalState.isMenuOpen) ? <SettingsPanel/> : <span onClick={this.handleMenuButtonClick}>
                 {dictionary[globalState.currentLanguage].clickToExpand}
             </span>}
 
 
 
-        </LeftPanelDiv>
+            </LeftPanelDiv>
+        } else {
+            return <LeftPanelDiv isOpen={false} onClick={this.handleMenuButtonClick} />
+        }
+
     }
 }
 
